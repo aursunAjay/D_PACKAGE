@@ -1,0 +1,45 @@
+[Defines]
+  DEC_SPECIFICATION              = 0x00010005
+  PACKAGE_NAME                   = C_PACKAGE
+  PACKAGE_GUID                   = a15ed5b7-f34b-47cd-a2ca-8e9767cb0f3e
+  PACKAGE_VERSION                = 0.3
+
+
+[Includes]
+  Include
+  Include/Library
+
+[Includes.X64]
+   Include 
+[Includes.common]  
+#[Includes.common.Private]  
+  IncludePrivate
+
+[LibraryClasses] 
+  BaseLib       |Include/Library/BaseLib.h
+  DebugLib      |Include/Library/DebugLib.h
+  PeiServicesLib|Include/Library/PeiServicesLib.h  
+  C_BASE_LIB    |Include/Library/C_BASE_LIB.h  
+  C_PEIM_LIB    |Include/Library/C_PEIM_LIB.h  
+  C_APP_LIB     |Include/Library/C_APP_LIB.h    
+  PrePiLib      |Include/Library/PrePiLib.h        
+  
+[Ppis]
+  gEmuC_PEIM_PPI_Guid              = {0X997AE48D, 0X7418, 0X441F, {0XA3, 0XF1, 0X14, 0X03, 0X2F, 0X24, 0XD8, 0X0B}}
+  gEmuC_PEIM_PPI_Notify_Guid       = {0X6B012AA7, 0XC977, 0X449C, {0X91, 0X60, 0X04, 0X73, 0XE3, 0XF0, 0X20, 0X9E}}
+  gEmuC_PEIM_PPI_PPI_Data_Guid     = {0X84D23EAF, 0X5EB4, 0X4B1E, {0X96, 0XEB, 0X08, 0X5A, 0X32, 0X54, 0X42, 0X5D}}
+  gEmuC_PEIM_PPI_PPI_struct_Guid   = {0x9d4b7194, 0x799b, 0x4405, {0x8d, 0xc3, 0xc6, 0x17, 0x62, 0xe1, 0xd8, 0xa3}}
+  gEmuC_PEIM_PPI_PPI_Dispatch_Guid = {0x621d0105, 0xfe42, 0x43d9, {0xb7, 0x27, 0x42, 0x27, 0x0b, 0xb1, 0x3a, 0x7b}}
+
+  
+[Guids] 
+  gEmuC_DXE_HOB_Guid    = {0X515FFAAF, 0X5D36, 0X41DC, {0XAD, 0XE0, 0X3D, 0X05, 0XAB, 0X39, 0XD2, 0X0C}}
+  gEmuC_HOB_comm_Guid   = {0xba7e9088, 0x0644, 0x41bf, {0xbe, 0x03, 0xd4, 0x88, 0x63, 0xbc, 0x68, 0x06}}
+  gGUID_SampleProtocol  = {0xc42b416c, 0xee0a, 0x47e8, {0x8b, 0xea, 0xb2, 0xe3, 0xe8, 0x77, 0xf6, 0xff}}
+  gEfiChapter7TokenSpaceGuid  = {0xd07e0f72, 0x45ff, 0x4c38, {0xa6, 0x53, 0x6a, 0xb9, 0x1d, 0x28, 0xcb, 0x8f}}
+
+[Protocols]
+  gEfiMonoGuid  = {0x1e86c913, 0xa069, 0x4f34, {0xa5, 0x2e, 0xd9, 0x35, 0x40, 0xa4, 0x4e, 0x21}}
+   
+  [PcdsFixedAtBuild]
+  gEfiChapter7TokenSpaceGuid.C_DXE_Demo|0|UINT32|0x0000001

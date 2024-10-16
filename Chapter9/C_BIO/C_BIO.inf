@@ -1,0 +1,43 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = C_BIO
+  FILE_GUID                      = d649668a-36ad-4969-9849-998b6cd51554
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DRIVER_LOAD
+  UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    C_BIO.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec 
+    C_PACKAGE/C_PACKAGE.dec
+    
+[LibraryClasses]
+    UefiBootServicesTableLib
+    MemoryAllocationLib
+    UefiDriverEntryPoint
+    BaseLib
+    HiiLib
+    EmuThunkLib    
+    C_DXE_LIB
+    C_BASE_LIB
+    UefiLib
+    DebugLib
+    DxeServicesTableLib
+
+[LibraryClasses.common.DXE_DRIVER]    
+    HobLib
+
+[Protocols]
+    gEfiBlockIoProtocolGuid
+    
+[Depex]
+    TRUE
+
+[Guids]
+    gEmuC_DXE_HOB_Guid 
+    gEmuC_HOB_comm_Guid   
+    gGUID_SampleProtocol

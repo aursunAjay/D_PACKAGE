@@ -1,0 +1,25 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_APPLICATION
+    FILE_GUID                      = aefbd18c76be4b7fb5c4c2e99c7256d8
+    MODULE_TYPE                    = UEFI_APPLICATION
+    VERSION_STRING                 = 1.0
+    LIBRARY_CLASS                  = C_APPLICATION
+    
+
+[Sources]
+    C_APP_LIB.c
+
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec
+
+[LibraryClasses]    
+    DebugLib
+    C_BASE_LIB    
+    C_APP_LIB
+    UefiLib
+
+[Protocols]
+ 

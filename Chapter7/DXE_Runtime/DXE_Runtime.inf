@@ -1,0 +1,44 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = DXE_Runtime
+  FILE_GUID                      = dcce3308-fa86-4ff7-9087-b2ed77305ff3
+  MODULE_TYPE                    = DXE_RUNTIME_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DRIVER_LOAD
+ 
+[Sources]
+    DXE_Runtime.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec 
+    C_PACKAGE/C_PACKAGE.dec
+    
+[LibraryClasses]
+    UefiBootServicesTableLib
+    MemoryAllocationLib
+    UefiRuntimeLib
+    UefiDriverEntryPoint
+    BaseLib
+    HiiLib
+    EmuThunkLib    
+    C_DXE_LIB
+    C_BASE_LIB
+    UefiLib
+    DebugLib
+    DxeServicesTableLib
+
+[LibraryClasses.common.DXE_DRIVER]    
+    HobLib
+
+[Protocols]
+    gEfiMonoGuid
+    gEfiMonotonicCounterArchProtocolGuid
+    
+[Depex]
+    TRUE
+
+[Guids]
+    gEmuC_DXE_HOB_Guid 
+    gEmuC_HOB_comm_Guid   
+    gGUID_SampleProtocol

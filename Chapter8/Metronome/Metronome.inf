@@ -1,0 +1,42 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Metronome
+  FILE_GUID                      = da9bfe16-e520-4b3b-9762-cfba5037e22f
+  MODULE_TYPE                    = UEFI_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DRIVER_LOAD
+  UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    Metronome.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec 
+    C_PACKAGE/C_PACKAGE.dec
+    
+[LibraryClasses]
+    UefiBootServicesTableLib
+    MemoryAllocationLib
+    UefiDriverEntryPoint
+    BaseLib
+    HiiLib
+    EmuThunkLib    
+    C_DXE_LIB
+    C_BASE_LIB
+    UefiLib
+    DebugLib
+    DxeServicesTableLib
+
+[LibraryClasses.common.DXE_DRIVER]    
+    HobLib
+
+[Protocols]
+
+[Depex]
+    TRUE
+
+[Guids]
+    gEmuC_DXE_HOB_Guid 
+    gEmuC_HOB_comm_Guid   
+    gGUID_SampleProtocol

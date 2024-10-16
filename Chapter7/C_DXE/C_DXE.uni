@@ -1,0 +1,3 @@
+#string STR_MODULE_ABSTRACT             #language en-US "C_DXE Library Instance for DXE_DRIVER"
+
+#string STR_MODULE_DESCRIPTION          #language en-US "This is simple DXE Driver

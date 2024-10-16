@@ -1,0 +1,27 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_PEIM_LIB
+    FILE_GUID                      = 12529230-c80e-4fc7-98ac-b93bbca90c85
+    MODULE_TYPE                    = PEIM
+    VERSION_STRING                 = 1.0
+    LIBRARY_CLASS                  = C_PEIM_LIB
+    CONSTRUCTOR                    = INIT
+    DESTRUCTOR                     = DEINIT
+
+
+[Sources]
+    C_PEIM_LIB.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec
+
+
+[LibraryClasses]
+    C_BASE_LIB  
+    DebugLib
+    PeimEntryPoint
+
+
+[Protocols]
+ 

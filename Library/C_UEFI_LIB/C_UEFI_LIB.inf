@@ -1,0 +1,24 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_UEFI_LIB
+    FILE_GUID                      = 9177f8bb-3353-4ca7-9511-8df7efb6b740
+    MODULE_TYPE                    = UEFI_DRIVER
+    VERSION_STRING                 = 1.0
+    LIBRARY_CLASS                  = C_UEFI_LIB
+    CONSTRUCTOR                    = INIT
+    DESTRUCTOR                     = DEINIT
+[Sources]
+    C_UEFI_LIB.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec
+
+
+[LibraryClasses]
+    UefiLib
+    DebugLib
+    UefiDriverEntryPoint
+    C_BASE_LIB  
+[Protocols]
+ 

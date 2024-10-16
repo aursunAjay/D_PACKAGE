@@ -1,0 +1,8 @@
+#ifndef C_UEFI_LIB_H
+#define C_UEFI_LIB_H
+#include <Base.h>
+
+EFI_STATUS EFIAPI DEINIT (IN EFI_HANDLE handle,IN EFI_SYSTEM_TABLE *table);
+EFI_STATUS EFIAPI INIT (IN EFI_HANDLE handle,IN EFI_SYSTEM_TABLE *table);
+ 
+#endif

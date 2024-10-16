@@ -1,0 +1,32 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_UEFI_DIO
+    FILE_GUID                      = eb3ba38c-31a1-48c3-a85d-80e84e86f2ea
+    MODULE_TYPE                    = UEFI_DRIVER
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = DRIVER_LOAD
+    UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    C_UEFI_DIO.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec    
+   
+[LibraryClasses]     
+    C_UEFI_LIB
+    UefiDriverEntryPoint
+    DebugLib
+    C_BASE_LIB
+
+[LibraryClasses.common.UEFI_DRIVER]    
+    HobLib
+ 
+[Guids]
+   gEmuC_DXE_HOB_Guid
+   gGUID_SampleProtocol
+
+[Protocols]
+   gEfiBlockIoProtocolGuid
+ 

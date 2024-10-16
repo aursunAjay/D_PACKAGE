@@ -1,0 +1,49 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_FS
+    FILE_GUID                      = 94e38020-eb9b-49f0-8643-e083ed59128d
+    MODULE_TYPE                    = DXE_DRIVER
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = DRIVER_LOAD
+    UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    C_FS.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec    
+    
+[LibraryClasses]    
+    UefiBootServicesTableLib
+    MemoryAllocationLib
+    UefiDriverEntryPoint
+    BaseLib
+    HiiLib
+    EmuThunkLib    
+    C_DXE_LIB
+    C_BASE_LIB
+    UefiLib
+    DebugLib
+    DxeServicesTableLib
+    DevicePathLib
+        
+[Ppis]        
+    gEmuC_PEIM_PPI_Notify_Guid 
+    gEmuC_PEIM_PPI_Guid
+    gEmuC_PEIM_PPI_PPI_Data_Guid
+    gEmuC_PEIM_PPI_PPI_struct_Guid
+    gEmuC_PEIM_PPI_PPI_Dispatch_Guid
+    
+[Depex]
+    TRUE
+    
+[Guids]
+    gEmuC_DXE_HOB_Guid
+    gEmuC_HOB_comm_Guid  
+    
+    
+[Protocols] 
+gEfiLoadedImageProtocolGuid
+gEfiLoadedImageProtocolGuid
+gEfiLoadedImageDevicePathProtocolGuid

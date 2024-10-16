@@ -1,0 +1,44 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = C_Application
+  FILE_GUID                      = b721adc2-08ea-4ba8-96b4-745b4209c604
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = main_point
+  UNLOAD_IMAGE                   = exit_point
+
+ 
+[Sources]
+    C_Application.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec 
+    C_PACKAGE/C_PACKAGE.dec
+    
+[LibraryClasses]
+    UefiBootServicesTableLib
+    UefiApplicationEntryPoint
+    MemoryAllocationLib
+    BaseMemoryLib
+    UefiLib
+    DebugLib
+    BaseLib
+    EmuThunkLib
+    PcdLib 
+    C_BASE_LIB
+    C_APP_LIB
+
+ 
+
+[Protocols]
+    gEfiLoadedImageProtocolGuid
+    gEfiSimpleFileSystemProtocolGuid
+    gEfiLoadedImageProtocolGuid
+    gEfiLoadedImageDevicePathProtocolGuid
+
+[Depex]
+    TRUE
+
+[Guids] 
+    gGUID_SampleProtocol

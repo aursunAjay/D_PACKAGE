@@ -1,0 +1,44 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = C_RTC
+  FILE_GUID                      = 99d24e0f-0683-4388-a567-8d6c9fd1087f
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DRIVER_LOAD
+  UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    C_RTC.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec 
+    C_PACKAGE/C_PACKAGE.dec
+    
+[LibraryClasses]
+    UefiBootServicesTableLib
+    MemoryAllocationLib
+    UefiDriverEntryPoint
+    BaseLib
+    HiiLib
+    EmuThunkLib    
+    C_DXE_LIB
+    C_BASE_LIB
+    UefiLib
+    DebugLib
+    DxeServicesTableLib
+
+[LibraryClasses.common.DXE_DRIVER]    
+    HobLib
+
+[Protocols]
+  
+
+[Depex]
+    TRUE
+
+[Guids]
+    gEmuC_DXE_HOB_Guid 
+    gEmuC_HOB_comm_Guid   
+    gGUID_SampleProtocol
+    

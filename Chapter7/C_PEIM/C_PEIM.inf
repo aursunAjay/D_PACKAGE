@@ -1,0 +1,40 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_PEIM
+    FILE_GUID                      = f1b6b4cf-a4ec-4adf-8350-5e7944670def
+    MODULE_TYPE                    = PEIM
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = DRIVER_LOAD
+    UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    C_PEIM.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec    
+    
+[LibraryClasses]    
+    BaseLib
+    DebugLib
+    PeiServicesLib
+    PeiServicesTablePointerLib
+    PeimEntryPoint
+    C_BASE_LIB
+    C_PEIM_LIB
+    HobLib
+        
+[Ppis]        
+    gEmuC_PEIM_PPI_Notify_Guid 
+    gEmuC_PEIM_PPI_Guid
+    gEmuC_PEIM_PPI_PPI_Data_Guid
+    gEmuC_PEIM_PPI_PPI_struct_Guid
+    gEmuC_PEIM_PPI_PPI_Dispatch_Guid
+    
+[Depex]
+    TRUE
+    
+[Guids]
+    gEmuC_DXE_HOB_Guid
+    gEmuC_HOB_comm_Guid    
+ 

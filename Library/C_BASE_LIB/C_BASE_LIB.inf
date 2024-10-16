@@ -1,0 +1,21 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = C_PACKAGE
+    FILE_GUID                      = 1b8f9ed3-9229-4e6d-954c-b7e2ed1185cd
+    MODULE_TYPE                    = BASE
+    VERSION_STRING                 = 1.0
+    LIBRARY_CLASS                  = C_PACKAGE
+    
+[Sources]
+    C_BASE_LIB.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    C_PACKAGE/C_PACKAGE.dec
+
+[LibraryClasses]    
+    DebugLib
+    C_BASE_LIB    
+
+[Protocols]
+ 

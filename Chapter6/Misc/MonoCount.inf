@@ -1,0 +1,30 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = MonoCount
+    FILE_GUID                      = 58d15279-6ac4-4807-b2de-f81b4dcf1197
+    MODULE_TYPE                    = UEFI_DRIVER
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = DRIVER_LOAD
+   # UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    MonoCount.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec
+    C_PACKAGE/C_PACKAGE.dec
+      
+[LibraryClasses]   
+    UefiLib 
+    UefiDriverEntryPoint 
+    UefiBootServicesTableLib 
+    UefiRuntimeServicesTableLib 
+    DebugLib 
+    PcdLib 
+    
+[Guids] 
+
+[Protocols] 
+    gEfiMonotonicCounterArchProtocolGuid
+    gEfiMonoGuid

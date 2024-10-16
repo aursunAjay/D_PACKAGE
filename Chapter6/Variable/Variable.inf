@@ -1,0 +1,34 @@
+[Defines]
+    INF_VERSION                    = 0x00010005
+    BASE_NAME                      = Variable
+    FILE_GUID                      = 4537df55-771c-4c16-93bf-a0a2b11d476b
+    MODULE_TYPE                    = UEFI_DRIVER
+    VERSION_STRING                 = 1.0
+    ENTRY_POINT                    = DRIVER_LOAD
+ #   UNLOAD_IMAGE                   = EXIT
+
+[Sources]
+    Variable.c
+
+[Packages]
+    MdePkg/MdePkg.dec
+    MdeModulePkg/MdeModulePkg.dec
+  
+[LibraryClasses]
+    BaseLib 
+    BaseMemoryLib 
+    DevicePathLib 
+    MemoryAllocationLib 
+    PrintLib 
+    UefiLib 
+    UefiDriverEntryPoint 
+    UefiBootServicesTableLib 
+    UefiRuntimeServicesTableLib 
+    DebugLib 
+    PcdLib 
+     
+    
+[Guids] 
+
+[Protocols] 
+ 
